@@ -1,0 +1,36 @@
+End Point                                                       -   Description
+-------------------------------------------------------------------------------------------------------------------
+/category                                                       -   All Categories
+/category/{category_id}                                         -   Category Details by id
+/products_by_category/{category_id}                             -   Category Products By Category ID 
+
+
+Admin APP API
+-------------------------------------------------------------------------------------------------------------------
+/adminlogin/{post:email,password,ip, device_id  }               -   For Admin Login 
+/new_orders/{page_no} [GET:auth_code,device_id,uid]             -   Get all new orders
+/pending_orders/{page_no}[GET:auth_code,device_id,uid]          -   Get all pending Orders
+/canceled_orders/{page_no}[GET:auth_code,device_id,uid]         -   Get all canceled Orders
+/delivered_orders/{page_no}[GET:auth_code,device_id,uid]        -    Get all delivered Orders
+/order/{id}[GET:auth_code,device_id,uid]                        -   Get Order Details by Order ID
+/order_status_update/[POST:status,order_id,value]               -   Update Order Status (when accept value=minute,when reject value=reason)
+/reasons                                                        -   Get all reasons
+/add_reason[POST:reason]                                        -   Add a reason
+/reason_update[POST:id,reason]                                  -   Update a reason
+/minutes                                                        -   Get all minutes
+/add_minute[POST:minute]                                        -   Add a minute
+/minute_update[POST:id,minute]                                  -   Update a minute
+/print/[GET:order_id]                                           -   Print an order
+/take_order                                                     -   Get order taking status
+/update_take_order/{status}                                     -   Update order taking status
+/update_delivery_time/{time}                                     -   Update order delivery time 
+User App API
+-------------------------------------------------------------------------------------------------------------------
+/change_password  [POST:user_id,current_password,new_password]  -   Change password 
+/collection_address                                             -   Get Collection Address
+/check_coupon[post:coupon_code]                                 -   Check Coupon Code validity and show Discount amount
+/user_login{post:login_email,login_password,ip, device_id}      -   For User Login   
+/user_registration[post:name,email,password,phone, postcode, house_no, address]  -   For User Registration
+/reset-password[post:email]                                     -   Get Forgot Password
+/orders[post:user_id]                                           -   Get Orders
+/logout
